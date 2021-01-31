@@ -149,9 +149,9 @@ a:hover { color: #FF0; }
 
 
 .baner-content {
-  padding-top: 30vh;
+  padding-top: 20vh;
   text-align: center;
-  background-image: url(../img/1st-section.jpg);
+  background-image: url(../img/1st-section.jpeg);
 }
 
 .baner-content h1 {
@@ -495,6 +495,7 @@ footer em {
   
   .baner-content {
     padding-top: 30vh;
+    background-position: right!important;
   }
 
   .baner-content h1 {
