@@ -19,10 +19,20 @@
     $('body').vegas({
         slides: [
             { src: 'images/slide-image02.jpg' },
-            { src: 'images/slide-image03.jpg' }
+            { src: 'images/slide-image03.jpg' },
+            { src: 'images/slide-image04.jpg' },
+            { src: 'images/slide-image05.jpg' },
+            { src: 'images/slide-image06.jpg' },
+            { src: 'images/slide-image07.jpg' },
+            { src: 'images/slide-image08.jpg' },
+            { src: 'images/slide-image09.jpg' },
+            { src: 'images/slide-image10.jpg' },
+            { src: 'images/slide-image11.jpg' }
         ],
         timer: false,
-        transition: [ 'zoomOut', ]
+        delay: 6000,
+        shuffle: true,
+        animation: 'random'
     });
 
 })(jQuery);
