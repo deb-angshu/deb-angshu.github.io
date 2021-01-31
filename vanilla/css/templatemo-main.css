@@ -114,7 +114,7 @@ a:hover { color: #FF0; }
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-color: black;
-  boder-right: 0;
+  border-right: 0;
 }
 .fixed-side-navbar .nav > li a:hover > span {
   color: black;
@@ -495,7 +495,7 @@ footer em {
   
   .baner-content {
     padding-top: 30vh;
-    background-position: right!important;
+    background-position: center!important;
   }
 
   .baner-content h1 {
