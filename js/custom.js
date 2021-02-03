@@ -26,8 +26,7 @@
             { src: 'images/slide-image07.jpg' },
             { src: 'images/slide-image08.jpg' },
             { src: 'images/slide-image09.jpg' },
-            { src: 'images/slide-image10.jpg' },
-            { src: 'images/slide-image11.jpg' }
+            { src: 'images/slide-image10.jpg' }
         ],
         timer: false,
         delay: 6000,
