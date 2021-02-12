@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
 
      <title style="font-family: 'Lucida Console', 'Courier New', monospace;">Jhilam Weds Debangshu</title>
-     <link rel="icon" type="image/png" href="/favicon.ico"/>
+     <link rel="icon" type="image/png" href="/favicon.ico" />
      <link rel="apple-touch-icon" href="apple-touch-icon.png">
      <meta property="og:image" content="https://deb-angshu.github.io/apple-touch-icon.png">
      <meta charset="UTF-8">
@@ -19,8 +20,25 @@
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/templatemo-style.css">
+     <style>
+          #playButton {
+               position: absolute;
+               top: 4px;
+               left: 4px;
+               /* width: 0px; */
+               /* height: 0px; */
+               z-index: 9999;
+               background-color: transparent;
+               border: none;
+          }
+
+          #playButton:focus {
+               outline: none;
+          }
+     </style>
 
 </head>
+
 <body>
 
      <!-- PRE LOADER -->
@@ -28,46 +46,46 @@
           <div class="spinner">
 
                <span class="spinner-rotate"></span>
-               
+
           </div>
      </section>
 
 
      <!-- GRID LINE -->
-    <section class="grid">
-         <div class="container">
-            <div class="row">
+     <section class="grid">
+          <div class="container">
+               <div class="row">
 
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
+                    <div class="col-md-2 col-sm-2">
+                         <div class="grid-line"></div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                         <div class="grid-line"></div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                         <div class="grid-line"></div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                         <div class="grid-line"></div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                         <div class="grid-line"></div>
+                    </div>
 
-            </div>
-         </div>
-    </section>
+               </div>
+          </div>
+     </section>
 
 
-    <div class="menu-bg"></div>
-    <div class="menu-burger">☰</div>
+     <div class="menu-bg"></div>
+     <div class="menu-burger">☰</div>
 
-    <div class="menu-items">
-       <!-- <div class="container">
+     <div class="menu-items">
+          <!-- <div class="container">
          <div class="row"> -->
           <iframe src="./vanilla/index.html" style="border:none; height: 100vh;">
           </iframe>
-           <!-- <div class="col-md-offset-2 col-md-4 col-sm-6">
+          <!-- <div class="col-md-offset-2 col-md-4 col-sm-6">
             <h1>Navigations</h1>
              <ul class="menu">
                 <li><a href="#">Home</a></li>
@@ -97,14 +115,14 @@
                <li><a href="#" class="fa fa-instagram"></a></li>
              </ul>
            </div> -->
-         <!-- </div>
+          <!-- </div>
        </div> -->
-    </div>
+     </div>
 
 
      <!-- HOME -->
      <section id="home">
-        <div class="overlay"></div>
+          <div class="overlay"></div>
           <div class="container">
                <div class="row">
 
@@ -128,7 +146,7 @@
                                    <li>
                                         <span class="seconds">00</span>
                                         <h3>seconds</h3>
-                                   </li>     
+                                   </li>
                               </ul>
                               <!-- <div class="subscribe-form">
                                 <form action="" method="get">
@@ -150,6 +168,59 @@
      <script src="js/countdown.js"></script>
      <script src="js/init.js"></script>
      <script src="js/custom.js"></script>
+     <script>
+          $(document).ready(function () {
 
+               var myMusic = new sound("GentleSea.mp3");
+               //   myMusic.play();
+               function sound(src) {
+                    this.sound = document.createElement("audio");
+                    this.sound.src = src;
+                    //  this.sound.setAttribute("preload", "auto");
+                    this.sound.setAttribute("controls", "none");
+                    // this.sound.setAttribute("loop", "none");
+                    this.sound.style.display = "none";
+                    document.body.appendChild(this.sound);
+                    this.play = function () {
+                         this.sound.play();
+                    }
+                    this.stop = function () {
+                         this.sound.pause();
+                    }
+                    this.sound.onended =  function(){
+                    if(this.src.includes('GentleSea.mp3')){
+                         this.src='MeditationSpace.mp3';
+                         this.load();
+                         this.play();
+                    }else if(this.src.includes('MeditationSpace.mp3')){
+                         this.src='KrishnaTheme.mp3';
+                         this.load();
+                         this.play();
+                    }else if(this.src.includes('KrishnaTheme.mp3')){
+                         this.src='GentleSea.mp3';
+                         this.load();
+                         this.play();
+                    }
+               };
+               }
+               $("#playButton").click(function () {
+                    if ($("#playButton span").html() ==
+                         '<i class="fa fa-pause-circle-o fa-lg" aria-hidden="true"></i>') {
+                         myMusic.stop();
+                    } else {
+                         myMusic.play();
+                    }
+                    $("#playButton span").html(
+                         $("#playButton span").html() ==
+                              '<i class="fa fa-pause-circle-o fa-lg" aria-hidden="true"></i>' ?
+                              '<i class="fa fa-play-circle-o fa-lg" aria-hidden="true"></i>' :
+                              '<i class="fa fa-pause-circle-o fa-lg" aria-hidden="true"></i>');
+               });
+          })
+     </script>
+     <button type="submit" id="playButton">
+          <span><i class="fa fa-play-circle-o fa-lg" aria-hidden="true"></i></span>
+     </button>
 </body>
+
 </html>
